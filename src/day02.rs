@@ -1,30 +1,52 @@
 static INPUT: &str = include_str!("../inputs/day02");
 
-const ADD: usize = 1;
-const MUL: usize = 2;
-const HALT: usize = 99;
+const OUTPUT: usize = 0;
+const NOUN:   usize = 1;
+const VERB:   usize = 2;
 
-pub fn part1() {
-    let mut index = 0;
-    let mut sequence = INPUT
+const ADD:    usize = 1;
+const MUL:    usize = 2;
+const HALT:   usize = 99;
+
+fn load_instructions() -> Vec<usize> {
+    INPUT
         .trim()
         .split(",")
         .map(|n| n.parse::<usize>().unwrap())
-        .collect::<Vec<_>>();
+        .collect::<Vec<_>>()
+}
 
-    while let &[opcode, lhs, rhs, dest] = &sequence[index..index + 4] {
+fn run_instructions(noun: usize, verb: usize) -> usize {
+    let mut index = 0;
+    let mut instructions = load_instructions();
+    
+    instructions[NOUN] = noun;
+    instructions[VERB] = verb;
+    
+    while let &[opcode, lhs, rhs, dest] = &instructions[index..index + 4] {
         index += 4;
         match opcode {
-            ADD  => sequence[dest] = sequence[lhs] + sequence[rhs],
-            MUL  => sequence[dest] = sequence[lhs] * sequence[rhs],
+            ADD  => instructions[dest] = instructions[lhs] + instructions[rhs],
+            MUL  => instructions[dest] = instructions[lhs] * instructions[rhs],
             HALT => break,
             _ => panic!("invalid opcode"),
         }
     }
+    
+    instructions[OUTPUT] 
+}
 
-    println!("{:?}", sequence[0]);
+pub fn part1() {
+    println!("{}", run_instructions(12, 2));
 }
 
 pub fn part2() {
-    println!();
+    const TARGET_OUTPUT: usize = 19690720;
+    for noun in 0..99 {
+        for verb in 0..99 {
+            if run_instructions(noun, verb) == TARGET_OUTPUT {
+                return println!("{}", 100 * noun + verb);
+            }
+        }
+    }
 }
