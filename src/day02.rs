@@ -11,7 +11,7 @@ const HALT:   usize = 99;
 const TARGET_OUTPUT: usize = 19_690_720;
 
 fn load_instructions() -> Vec<usize> {
-    INPUT.trim().split(",").map(|n| n.parse().unwrap()).collect()
+    INPUT.trim().split(',').map(|n| n.parse().unwrap()).collect()
 }
 
 fn run_instructions(mut instructions: Vec<usize>, noun: usize, verb: usize) -> usize {
@@ -19,7 +19,7 @@ fn run_instructions(mut instructions: Vec<usize>, noun: usize, verb: usize) -> u
     instructions[NOUN] = noun;
     instructions[VERB] = verb;
     
-    while let &[opcode, lhs, rhs, dest] = &instructions[index..index + 4] {
+    while let [opcode, lhs, rhs, dest] = instructions[index..index + 4] {
         index += 4;
         match opcode {
             ADD  => instructions[dest] = instructions[lhs] + instructions[rhs],
