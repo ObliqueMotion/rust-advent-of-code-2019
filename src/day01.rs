@@ -15,7 +15,7 @@ pub fn part1() {
         .lines()
         .map(|s| s.parse::<u64>().ok().as_ref().and_then(required_fuel).unwrap())
         .sum::<u64>();
-    println!("{}", solution);
+    println!("Day01 Part1: {}", solution);
 }
 
 pub fn part2() {
@@ -23,5 +23,5 @@ pub fn part2() {
         .lines()
         .map(|input| input.parse::<u64>().ok().map(compound_fuel).unwrap())
         .sum::<u64>();
-    println!("{}", solution);
+    println!("Day01 Part2: {}", solution);
 }
