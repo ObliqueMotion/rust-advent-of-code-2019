@@ -11,7 +11,7 @@ const HALT:   usize = 99;
 const TARGET_OUTPUT: usize = 19_690_720;
 
 fn load_instructions() -> Vec<usize> {
-    INPUT.trim().split(",").map(|n| n.parse().unwrap()).collect::<Vec<_>>()
+    INPUT.trim().split(",").map(|n| n.parse().unwrap()).collect()
 }
 
 fn run_instructions(mut instructions: Vec<usize>, noun: usize, verb: usize) -> usize {
