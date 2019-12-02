@@ -42,8 +42,8 @@ pub fn part1() {
 
 pub fn part2() {
     const TARGET_OUTPUT: usize = 19690720;
-    for noun in 0..99 {
-        for verb in 0..99 {
+    for noun in 0..100 {
+        for verb in 0..100 {
             if run_instructions(noun, verb) == TARGET_OUTPUT {
                 return println!("{}", 100 * noun + verb);
             }

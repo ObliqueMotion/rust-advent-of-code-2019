@@ -1,5 +1,5 @@
 [package]
-name = "toost"
+name = "advent-of-code-2019"
 version = "0.1.0"
 authors = ["erik <aeketn@gmail.com>"]
 edition = "2018"
