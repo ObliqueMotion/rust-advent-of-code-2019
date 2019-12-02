@@ -34,7 +34,7 @@ fn run(mut instructions: Vec<usize>, noun: usize, verb: usize) -> usize {
 
 pub fn part1() {
     let instructions = load_instructions();
-    println!("{}", run(instructions, 12, 2));
+    println!("Day02 Part1: {}", run(instructions, 12, 2));
 }
 
 pub fn part2() {
@@ -43,7 +43,7 @@ pub fn part2() {
     for noun in 0..100 {
         for verb in 0..100 {
             if run(instructions.clone(), noun, verb) == TARGET_OUTPUT {
-                return println!("{}", 100 * noun + verb);
+                return println!("Day02 Part2: {}", 100 * noun + verb);
             }
         }
     }
