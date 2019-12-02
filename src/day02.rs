@@ -25,7 +25,7 @@ fn run(mut instructions: Vec<usize>, noun: usize, verb: usize) -> usize {
             ADD  => instructions[dest] = instructions[lhs] + instructions[rhs],
             MUL  => instructions[dest] = instructions[lhs] * instructions[rhs],
             HALT => break,
-            _ => panic!("invalid opcode"),
+            _    => panic!("invalid opcode {}", opcode),
         }
     }
     
