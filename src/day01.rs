@@ -13,13 +13,7 @@ fn compound_fuel(mass: u64) -> u64 {
 pub fn part1() {
     let solution = INPUT
         .lines()
-        .map(|s| {
-            s.parse::<u64>()
-                .ok()
-                .as_ref()
-                .and_then(required_fuel)
-                .unwrap()
-        })
+        .map(|s| s.parse::<u64>().ok().as_ref().and_then(required_fuel).unwrap())
         .sum::<u64>();
     println!("{}", solution);
 }
