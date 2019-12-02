@@ -39,7 +39,6 @@ pub fn part1() {
 
 pub fn part2() {
     let instructions = load_instructions();
-    
     for noun in 0..100 {
         for verb in 0..100 {
             if run(instructions.clone(), noun, verb) == TARGET_OUTPUT {
