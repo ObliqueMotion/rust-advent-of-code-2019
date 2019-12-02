@@ -9,11 +9,7 @@ const MUL:    usize = 2;
 const HALT:   usize = 99;
 
 fn load_instructions() -> Vec<usize> {
-    INPUT
-        .trim()
-        .split(",")
-        .map(|n| n.parse::<usize>().unwrap())
-        .collect::<Vec<_>>()
+    INPUT.trim().split(",").map(|n| n.parse::<usize>().unwrap()).collect::<Vec<_>>()
 }
 
 fn run_instructions(noun: usize, verb: usize) -> usize {
