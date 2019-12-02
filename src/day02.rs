@@ -12,10 +12,8 @@ fn load_instructions() -> Vec<usize> {
     INPUT.trim().split(",").map(|n| n.parse::<usize>().unwrap()).collect::<Vec<_>>()
 }
 
-fn run_instructions(noun: usize, verb: usize) -> usize {
+fn run_instructions(mut instructions: Vec<usize>, noun: usize, verb: usize) -> usize {
     let mut index = 0;
-    let mut instructions = load_instructions();
-    
     instructions[NOUN] = noun;
     instructions[VERB] = verb;
     
@@ -33,14 +31,16 @@ fn run_instructions(noun: usize, verb: usize) -> usize {
 }
 
 pub fn part1() {
-    println!("{}", run_instructions(12, 2));
+    let instructions = load_instructions();
+    println!("{}", run_instructions(instructions, 12, 2));
 }
 
 pub fn part2() {
     const TARGET_OUTPUT: usize = 19690720;
+    let instructions = load_instructions();
     for noun in 0..100 {
         for verb in 0..100 {
-            if run_instructions(noun, verb) == TARGET_OUTPUT {
+            if run_instructions(instructions.clone(), noun, verb) == TARGET_OUTPUT {
                 return println!("{}", 100 * noun + verb);
             }
         }
