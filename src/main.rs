@@ -26,6 +26,7 @@ mod day03;
 //mod day24;
 //mod day25;
 
+
 fn main() {
     let solution = env::args().nth(1).unwrap_or_default();
     match solution.parse::<usize>() {
