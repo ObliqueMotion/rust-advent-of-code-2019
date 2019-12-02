@@ -2,7 +2,7 @@ use std::iter::successors;
 
 static INPUT: &str = include_str!("../inputs/day01");
 
-fn required_fuel(&mass: &u64) -> Option<u64> {
+fn required_fuel(mass: &u64) -> Option<u64> {
     (mass / 3).checked_sub(2)
 }
 
