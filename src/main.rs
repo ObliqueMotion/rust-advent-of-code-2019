@@ -26,19 +26,18 @@ mod day03;
 //mod day24;
 //mod day25;
 
-
 fn main() {
     let solution = env::args().nth(1).unwrap_or_default();
     match solution.parse::<usize>() {
         Ok(11) => day01::part1(),
         Ok(12) => day01::part2(),
-        
+
         Ok(21) => day02::part1(),
         Ok(22) => day02::part2(),
-        
+
         Ok(31) => day03::part1(),
         Ok(32) => day03::part2(),
-        
+
         _ => panic!("the disco"),
     }
 }
