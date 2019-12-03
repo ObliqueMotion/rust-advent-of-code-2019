@@ -3,7 +3,7 @@ use std::env;
 mod day01;
 mod day02;
 mod day03;
-//mod day04;
+mod day04;
 //mod day05;
 //mod day06;
 //mod day07;
@@ -38,6 +38,9 @@ fn main() {
         Ok(31) => day03::part1(),
         Ok(32) => day03::part2(),
 
+        Ok(41) => day04::part1(),
+        Ok(42) => day04::part2(),
+        
         _ => panic!("the disco"),
     }
 }
