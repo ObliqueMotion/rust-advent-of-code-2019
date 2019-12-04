@@ -31,7 +31,7 @@ fn doubles_count(x: u32) -> usize {
 /// Returns the unique count of adjacent triple digits.
 fn triples_count(x: u32) -> usize {
     digits_of(x)
-        .tuple_windows::<(_, _, _)>()
+        .tuple_windows()
         .filter_map(|(d1, d2, d3)| if d1 == d2 && d1 == d3 { Some(d1) } else { None })
         .unique()
         .count()
