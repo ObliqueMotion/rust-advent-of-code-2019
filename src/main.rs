@@ -40,7 +40,7 @@ fn main() {
 
         Ok(41) => day04::part1(),
         Ok(42) => day04::part2(),
-        
+
         _ => panic!("the disco"),
     }
 }
