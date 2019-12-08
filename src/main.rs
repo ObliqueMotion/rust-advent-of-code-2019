@@ -5,7 +5,7 @@ mod day02;
 mod day03;
 mod day04;
 mod day05;
-//mod day06;
+mod day06;
 //mod day07;
 //mod day08;
 //mod day09;
@@ -43,6 +43,9 @@ fn main() {
 
         Ok(51) => day05::part1(),
         Ok(52) => day05::part2(),
+
+        Ok(61) => day06::part1(),
+        Ok(62) => day06::part2(),
 
         _ => panic!("the disco"),
     }
